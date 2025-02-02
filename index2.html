@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+      @font-face {
+        font-family: Khaotom;
+        src: url(/fonts/KhaotomDemo.ttf);
+      }
+
+      @font-face {
+        font-family: Ribbon;
+        src: url(/fonts/RibbonDemo-Regular.ttf);
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-100%);
+        }
+        50% {
+          transform: translateX(-200%);
+        }
+        75% {
+          transform: translateX(-300%);
+        }
+        100% {
+          transform: translateX(-400%);
+        }
+      }
+
+      @keyframes backgroundAnimation {
+        0% {
+          background-color: rgb(227, 255, 222);
+        }
+        25% {
+          background-color: rgb(255, 236, 247);
+        }
+        50% {
+          background-color: rgb(213, 247, 249);
+        }
+        75% {
+          background-color: rgb(252, 255, 225);
+        }
+        100% {
+          background-color: rgb(255, 241, 227);
+        }
+      }
+
+      body {
+        font-family: Khaotom;
+        margin: 0;
+        padding: 0;
+        animation: backgroundAnimation 9s infinite ease-in-out;
+      }
+
+      .container {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 10px;
+      }
+
+      .slider {
+        display: flex;
+        animation: slide 20s infinite;
+      }
+
+      .slider img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      #header {
+        font-family: Ribbon, sans-serif;
+        text-align: center;
+        font-size: 32px;
+        color: #ff69b4;
+        text-shadow: 2px 4px 6px rgba(186, 182, 182, 0.3);
+        font-weight: bold;
+        letter-spacing: 2px;
+        background: linear-gradient(
+          90deg,
+          rgb(180, 255, 220),
+          rgb(144, 255, 143),
+          rgb(185, 239, 255)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: -1px -1px 0 rgb(103, 237, 94), 1px 1px 0 rgb(0, 0, 0),
+          -1px -1px 0 rgb(7, 7, 7), -1px 1px 0 rgb(0, 0, 0);
+      }
+
+      p {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      .content {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+
+      @media (min-width: 400px) {
+        #header {
+          font-size: 48px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+
+        .container {
+          width: 85%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 id="header">สุขสันต์วันครบรอบ 1 ปี นะครับบี่บี๊</h1>
+      <div class="slider">
+        <img src="IMG_0924.JPG" alt="Image 1" />
+        <img src="IMG_0924.JPG" alt="Image 2" />
+        <img src="IMG_0924.JPG" alt="Image 3" />
+        <img src="IMG_0924.JPG" alt="Image 4" />
+      </div>
+      <div class="content">
+        <p>จำรูปพวกนี้ได้ไหมบี่บี๊ตอนเราอยู่แคมป์โคตรสนุกเลยเนอะ</p>
+      </div>
+    </div>
+  </body>
+</html>

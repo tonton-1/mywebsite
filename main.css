@@ -1,0 +1,161 @@
+@font-face {
+  font-family: Khaotom;
+  src: url(KhaotomDemo.ttf);
+}
+* {
+  touch-action: manipulation; /* ป้องกันการเลื่อนหน้าเว็บด้วยการแตะ */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(255, 237, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("https://example-romantic-bg.com");
+  background-size: cover;
+  background-position: center;
+}
+#helpMessage {
+  display: none;
+}
+.text-help {
+  text-align: center;
+  position: relative;
+  top: 20%;
+  font-family: Khaotom;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 50px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(255, 237, 250);
+  color: rgb(255, 0, 0);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.ask {
+  box-shadow: none;
+  background-color: rgb(255, 237, 250);
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+.ask:hover {
+  background-color: rgb(255, 237, 250);
+}
+.showhelp {
+  position: absolute;
+  width: 85%;
+  height: 70%;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85); /* สีพื้นหลังโปร่งใสเล็กน้อย */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  width: 350px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#passwordInput {
+  font-size: 31px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 0px solid #ffffff;
+  border-radius: 8px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+button {
+  background-color: rgb(204, 223, 146);
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #ff5275;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: #ffffff;
+  transform: scale(1);
+}
+
+.submit-btn {
+  grid-column: span 3;
+  background-color: rgb(225, 149, 171);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #e46b85;
+  transform: scale(1.05);
+}
+
+.submit-btn:active {
+  background-color: #cc6177;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* เพิ่มการทำ responsive */
+@media (max-width: 600px) {
+  .container {
+    width: 70%; /* ให้กว้างเต็มหน้าจอ */
+    padding: 20px; /* ลด padding ให้น้อยลง */
+  }
+
+  #passwordInput {
+    font-size: 18px; /* ลดขนาดฟอนต์ลงสำหรับหน้าจอขนาดเล็ก */
+    padding: 8px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 18px; /* ลดขนาดฟอนต์ของปุ่ม */
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 18px; /* ลดขนาดปุ่มยืนยัน */
+  }
+}
