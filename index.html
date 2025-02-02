@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Keypad</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <button class="ask" onclick="showHelp()">
+      <img src="icons8-help-48.png" alt="Help" />
+    </button>
+    <div class="showhelp" id="helpMessage">
+      <div class="text-help">
+        <span
+          >อันนี้ก็คือให้บี๊ลองใส่รหัสผ่าน
+          วันเกิดบี๊ง่ายใช่ไหมหล่ะแค่นี้เอง</span
+        >
+      </div>
+      <button class="close-btn" onclick="closeHelp()">ปิด</button>
+    </div>
+    <div class="container">
+      <input
+        type="text"
+        id="passwordInput"
+        placeholder="กรอกรหัสผ่าน"
+        readonly
+      />
+      <div class="keypad">
+        <!-- Buttons for digits 0-9 -->
+        <button onclick="addDigit(1)">1</button>
+        <button onclick="addDigit(2)">2</button>
+        <button onclick="addDigit(3)">3</button>
+        <button onclick="addDigit(4)">4</button>
+        <button onclick="addDigit(5)">5</button>
+        <button onclick="addDigit(6)">6</button>
+        <button onclick="addDigit(7)">7</button>
+        <button onclick="addDigit(8)">8</button>
+        <button onclick="addDigit(9)">9</button>
+        <button onclick="clearPassword()">C</button>
+        <button onclick="addDigit(0)">0</button>
+        <button id="del-btn" onclick="deleteLastDigit()">←</button>
+        <!-- New Submit button -->
+        <button class="submit-btn">ยืนยัน</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
