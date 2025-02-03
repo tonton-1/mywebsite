@@ -11,57 +11,60 @@
     <div class="container">
       <h1 id="header">สุขสันต์วันครบรอบ 1 ปี นะครับบี่บี๊</h1>
       <div class="slider">
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/hi.jpg?raw=true"
-          alt="Image 1"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp2.jpg?raw=true"
-          alt="Image 2"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp3.JPEG?raw=true"
-          alt="Image 3"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp4.JPEG?raw=true"
-          alt="Image 4"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp5.JPEG?raw=true"
-          alt="Image 5"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp6.JPEG?raw=true"
-          alt="Image 6"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp7.JPEG?raw=true"
-          alt="Image 7"
-        />
-        <img
-          src="https://github.com/tonton-1/mywebsite/blob/master/campdorm/camp8.JPEG?raw=true"
-          alt=""
-        />
+        <img src="camp1.jpg" alt="Image 1" />
+        <img src="camp2.jpg" alt="Image 2" />
+        <img src="hi.jpg" alt="Image 3" />
+        <img src="camp3.JPEG" alt="Image 4" />
+        <img src="camp4.JPEG" alt="Image 5" />
+        <img src="camp5.JPEG" alt="Image 6" />
+        <img src="camp6.JPEG" alt="Image 7" />
+        <img src="camp7.JPEG" alt="" />
       </div>
       <div class="counter" id="counter"></div>
       <div class="content">
         <p>จำรูปพวกนี้ได้ไหมบี่บี๊ตอนเราอยู่แคมป์โคตรสนุกเลยเนอะ</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad debitis,
+        magnam maxime mollitia, sapiente earum quae fugit, quas nisi doloremque
+        id asperiores aperiam error officiis facilis ratione quibusdam iure.
+        Asperiores iure architecto, explicabo molestias aperiam a voluptates
+        voluptas sit facilis aliquid officiis laboriosam dicta possimus
+        voluptate repellendus ipsum velit neque totam autem unde nulla. Eos
+        veritatis velit, neque officia, rem amet ad quisquam impedit sit at vero
+        sunt alias quaerat provident ea? Ipsum esse pariatur repudiandae tempore
+        dignissimos facere labore porro cupiditate alias magnam! Error, a
+        molestias expedita blanditiis quibusdam alias magni vel. Perspiciatis ea
+        ipsam soluta? Voluptatem, error ad?
+      </div>
+    </div>
+    <div class="wishbtn">
+      <div class="flex">
+        <img onclick="clickImage()" src="solemn.png" alt="" />
+        <img src="clock.png" alt="" />
+        <img src="clock.png" alt="" />
       </div>
     </div>
 
+    <div class="anvsrday">awdaw</div>
     <script>
       const images = document.querySelectorAll(".slider img");
       const counter = document.getElementById("counter");
+      const slider = document.querySelector(".slider");
       let currentIndex = 0;
       const totalImages = images.length;
 
-      function updateCounter() {
-        currentIndex = (currentIndex + 1) % totalImages; // เปลี่ยนรูปตามลำดับ
+      function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
         counter.innerHTML = `รูปที่ ${currentIndex + 1} จาก ${totalImages}`;
+        currentIndex = (currentIndex + 1) % totalImages;
       }
 
-      setInterval(updateCounter, 2000); // Update every 2 seconds
+      setInterval(updateSlider, 1500);
+
+      setAnniversaryTime();
+
+      function clickImage() {
+        window.location.href = "wish.html";
+      }
     </script>
   </body>
 </html>

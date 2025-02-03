@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      เราคบกันมาแล้ว
+      <div id="displaytime"></div>
+      หรือถ้าแปลงเป็นชัวโมง
+      <div id="displayhour"></div>
+      หรือถ้าแปลงเป็นนาที
+      <div id="displayminute"></div>
+      และถ้าแปลงเป็นวินาที
+      <div id="displaysecond"></div>
+    </div>
+    <script>
+      function setAnniversaryTime() {
+        const setDate = new Date("2024/02/24"); // วันที่ครบรอบ
+        let currentDate = new Date(); // วันที่ปัจจุบัน
+
+        // คำนวณความแตกต่างของเวลาเป็น millisecond
+        let differenceInTime = currentDate.getTime() - setDate.getTime();
+
+        // คำนวณความแตกต่างในหน่วยวัน, ชั่วโมง, นาที, วินาที
+        let differenceInDays = Math.floor(
+          differenceInTime / (1000 * 3600 * 24)
+        );
+        let differenceInHours = Math.floor(
+          (differenceInTime % (1000 * 3600 * 24)) / (1000 * 3600)
+        );
+        let differenceInMinutes = Math.floor(
+          (differenceInTime % (1000 * 3600)) / (1000 * 60)
+        );
+        let differenceInSeconds = Math.floor(
+          (differenceInTime % (1000 * 60)) / 1000
+        );
+
+        console.log(
+          `เวลาที่ผ่านมา: ${Math.abs(differenceInDays)} วัน ${Math.abs(
+            differenceInHours
+          )} ชั่วโมง ${Math.abs(differenceInMinutes)} นาที ${Math.abs(
+            differenceInSeconds
+          )} วินาที`
+        );
+        document.getElementById("displaytime").innerHTML = `${Math.floor(
+          differenceInTime / (1000 * 60 * 60 * 24)
+        )} วัน `;
+        document.getElementById("displayhour").innerHTML = `${Math.floor(
+          differenceInTime / (1000 * 60 * 60)
+        )}
+         ชั่วโมง `;
+        document.getElementById("displayminute").innerHTML = `${Math.floor(
+          differenceInTime / (1000 * 60)
+        )} นาที `;
+
+        document.getElementById("displaysecond").innerHTML = `${Math.floor(
+          differenceInTime / 1000
+        )} วินาที `;
+        console.log(differenceInSeconds);
+      }
+
+      setInterval(setAnniversaryTime, 1000);
+    </script>
+  </body>
+</html>

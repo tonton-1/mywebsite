@@ -1,29 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  animation: backgroundAnimation 9s infinite ease-in-out;
+}
 @font-face {
   font-family: Khaotom;
-  src: url(/fonts/KhaotomDemo.ttf);
-}
-
-@font-face {
-  font-family: Ribbon;
-  src: url(/fonts/RibbonDemo-Regular.ttf);
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(-200%);
-  }
-  75% {
-    transform: translateX(-300%);
-  }
-  100% {
-    transform: translateX(-400%);
-  }
+  src: url(KhaotomDemo.ttf);
 }
 
 @keyframes backgroundAnimation {
@@ -43,14 +25,6 @@
     background-color: rgb(255, 241, 227);
   }
 }
-
-body {
-  font-family: Khaotom;
-  margin: 0;
-  padding: 0;
-  animation: backgroundAnimation 9s infinite ease-in-out;
-}
-
 .container {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -61,10 +35,36 @@ body {
   margin: 0 auto;
   border-radius: 10px;
 }
-
+.anvsrday {
+  position: sticky;
+  bottom: 0; /* กำหนดให้ติดกับขอบล่าง */
+  background-color: rgb(39, 255, 64);
+  padding: 10px;
+  text-align: center;
+  z-index: 1000; /* ให้แน่ใจว่าอยู่เหนือ element อื่น */
+}
+/* #myForm {
+  display: none;
+} */
+.wishbtn .flex img {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 60px; /* Set the desired width */
+  height: 60px; /* Set the desired height */
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: red;
+  margin-left: 13.5%;
+  /* Make the image circular */
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
 .slider {
   display: flex;
-  animation: slide 7s infinite;
+  transition: transform 1.5s ease-in-out;
+  width: 100%;
 }
 
 .slider img {
@@ -73,7 +73,7 @@ body {
 }
 
 #header {
-  font-family: Ribbon, sans-serif;
+  font-family: Khaotom;
   text-align: center;
   font-size: 32px;
   color: #ff69b4;
@@ -93,34 +93,10 @@ body {
     -1px -1px 0 rgb(7, 7, 7), -1px 1px 0 rgb(0, 0, 0);
 }
 
-p {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 24px;
-}
-.content {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
 .counter {
   text-align: center;
   margin: 20px 0;
   font-size: 24px;
   font-weight: bold;
   color: #ff69b4;
-}
-
-@media (min-width: 400px) {
-  #header {
-    font-size: 48px;
-  }
-
-  p {
-    font-size: 21px;
-  }
-
-  .container {
-    width: 85%;
-  }
 }
